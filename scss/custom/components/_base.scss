@@ -1,4 +1,4 @@
-// CUSTOM BREAKPOINT MIXINS
+// CUSTOM BREAKPOINT MIXIN
 @mixin breakpoint($point) {
 	@if $point == desktop {
 		@media (min-width: 1200px) { @content ; }
@@ -15,21 +15,4 @@
 	@else {
 		@media (max-width: $point) { @content ; }
 	}
-}
-
-.strip {
-	padding: 2em 0;
-	&._slate {
-		background: $iq-slate;
-	}
-	&._slate1 {
-		background: $iq-slate1;
-	}
-	&._slate2 {
-		background: $iq-slate2;
-	}
-	&._slate, &._slate1, &._slate2 {
-		* { color: white; }
-	}
-
 }
