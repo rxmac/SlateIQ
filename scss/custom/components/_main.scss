@@ -11,11 +11,15 @@
 	&._blue {
 		background: $iq-blue;
 	}
+	&._dark-grad {
+		background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) );
+	}
 	&._slate, &._slate1, &._slate2, &._blue {
 		* { color: white; }
 	}
-	&._dark-grad {
-		background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) );
+	&._white {
+		background: white;
+		* { color: $iq-slate; }
 	}
 }
 

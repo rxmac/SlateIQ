@@ -1,5 +1,6 @@
 html {
 	font-size: 20px;
+	color: $iq-slate;
 	@include breakpoint(mobile) { font-size: 16px; }
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -54,4 +55,21 @@ h3 {
 }
 .label {
 	@include label;
+}
+
+a {
+	text-decoration: none;
+	* { transition: all 200ms; }
+	h3 {
+		color: $iq-slate;
+	}
+	&:hover {
+		cursor: pointer;
+		img {
+			filter: brightness(0.5);
+		}
+		h3 {
+			color: $iq-slate2 !important;
+		}
+	}
 }
