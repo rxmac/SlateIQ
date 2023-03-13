@@ -1,24 +1,4 @@
-// CUSTOM BREAKPOINT MIXINS
-@mixin breakpoint($point) {
-	@if $point == desktop {
-		@media (min-width: 1200px) { @content ; }
-	}
-	@else if $point == laptop {
-		@media (max-width: 1100px) { @content ; }
-	}
-	@else if $point == tablet {
-		@media (max-width: 1024px)  { @content ; }
-	}
-	@else if $point == mobile {
-		@media (max-width: 768px)  { @content ; }
-	}
-	@else {
-		@media (max-width: $point) { @content ; }
-	}
-}
-
-.strip {
-	padding: 2em 0;
+@mixin background-colors {
 	&._slate {
 		background: $iq-slate;
 	}
@@ -28,8 +8,63 @@
 	&._slate2 {
 		background: $iq-slate2;
 	}
-	&._slate, &._slate1, &._slate2 {
+	&._blue {
+		background: $iq-blue;
+	}
+	&._slate, &._slate1, &._slate2, &._blue {
 		* { color: white; }
 	}
+	&._dark-grad {
+		background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) );
+	}
+}
 
+
+main {
+	@include background-colors();
+}
+
+.strip {
+	padding: 2em 0;
+	@include background-colors();
+	&._fat { padding: 4em 0; }
+}
+
+.button {
+	padding: 0.75em 1em;
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 2px;
+	transition: all 200ms;
+	&._primary {
+		background: $iq-green;
+		color: $iq-slate;
+		@include label;
+		&:hover {
+			background: darken($color: $iq-green, $amount: 10);
+		}
+	}
+	&._text-only-primary {
+		@include label;
+		color: $iq-green;
+		padding-left: 0;
+		padding-right: 0;
+		&:hover { color: darken($color: $iq-green, $amount: 10); }
+	}
+}
+
+
+.mainNav {
+	padding: 0.75em 0;
+	._logo {
+		width: 120px;
+	}
+}
+
+.client-logos {
+	img {
+		filter: grayscale(1) invert(1);
+		mix-blend-mode: screen;
+		opacity: 0.4;
+	}
 }

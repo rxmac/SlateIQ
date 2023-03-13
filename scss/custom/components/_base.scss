@@ -16,3 +16,20 @@
 		@media (max-width: $point) { @content ; }
 	}
 }
+
+html { scroll-behavior: smooth; }
+
+html.sr .scrollReveal { visibility: hidden; }
+// https://scrollrevealjs.org/guide/user-experience.html
+
+img {
+	max-width: 100%;
+	height: auto !important;
+}
+img[src$=".svg"] { // automatically scale up SVGs
+	width: 100%;
+}
+svg {
+	width: 100%;
+	height: auto;
+}

@@ -14,10 +14,44 @@ html {
 	background: $iq-gold;
 }
 
-h1 {
-	font-size: 2.25em;
-}
-h2 {
-	font-size: 1.5em;
+h1, h2, h3, h4 {
+	font-weight: bold;
 }
 
+$font-size-xsmall: 13px;
+$font-size-small: 16px;
+$font-size-base: 1em;
+$font-size-medium: 1.25em;
+$font-size-large: 1.5em;
+$font-size-xlarge: 2.25em;
+
+
+h1, h2, h3, h4, h5 {
+	margin-bottom: 0.5em;
+}
+
+h1 {
+	font-size: $font-size-xlarge;
+}
+h2 {
+	font-size: $font-size-large;
+}
+h3 {
+	font-size: $font-size-medium;
+}
+
+.fs-xsmall  { font-size: $font-size-xsmall; }
+.fs-small   { font-size: $font-size-small; }
+.fs-base    { font-size: $font-size-base; }
+.fs-medium  { font-size: $font-size-medium; }
+.fs-large   { font-size: $font-size-large; } 
+.fs-xlarge  { font-size: $font-size-xlarge; }
+
+@mixin label {
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+.label {
+	@include label;
+}
